@@ -1,24 +1,24 @@
 {
     "version": "https://jsonfeed.org/version/1",
     "title": "津渡烛影深",
-    "subtitle": "= 有夢書架 =",
-    "icon": "https://github.com/MrQusal/MrQusal.github.io.git/images/favicon.ico",
-    "description": "描述123",
-    "home_page_url": "https://github.com/MrQusal/MrQusal.github.io.git",
+    "subtitle": "有夢書架",
+    "icon": "https://github.com/theeixc/theeixc.github.io.git/images/favicon.ico",
+    "description": "欢迎来到MrQusal的小站",
+    "home_page_url": "https://github.com/theeixc/theeixc.github.io.git",
     "items": [
         {
-            "id": "https://github.com/MrQusal/MrQusal.github.io.git/2020/12/24/hexo/hexo%E8%B8%A9%E5%9D%91/",
-            "url": "https://github.com/MrQusal/MrQusal.github.io.git/2020/12/24/hexo/hexo%E8%B8%A9%E5%9D%91/",
+            "id": "https://github.com/theeixc/theeixc.github.io.git/2020/12/24/hexo/hexo%E8%B8%A9%E5%9D%91/",
+            "url": "https://github.com/theeixc/theeixc.github.io.git/2020/12/24/hexo/hexo%E8%B8%A9%E5%9D%91/",
             "title": "hexo 配置指南",
             "date_published": "2020-12-24T05:10:45.000Z",
-            "content_html": "<h2 id=\"test\"><a class=\"anchor\" href=\"#test\">#</a> test</h2>\n",
+            "content_html": "<h1 id=\"test\"><a class=\"anchor\" href=\"#test\">#</a> test</h1>\n<ul>\n<li><ins>下划线</ins></li>\n</ul>\n<figure class=\"highlight javascript\"><figcaption data-lang=\"javascript\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><span class=\"token string\">\"123\"</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></pre></td></tr></table></figure>",
             "tags": [
                 "Hexo搭建个人博客"
             ]
         },
         {
-            "id": "https://github.com/MrQusal/MrQusal.github.io.git/2020/12/24/fornt-end/javascript/1/",
-            "url": "https://github.com/MrQusal/MrQusal.github.io.git/2020/12/24/fornt-end/javascript/1/",
+            "id": "https://github.com/theeixc/theeixc.github.io.git/2020/12/24/fornt-end/javascript/1/",
+            "url": "https://github.com/theeixc/theeixc.github.io.git/2020/12/24/fornt-end/javascript/1/",
             "title": "Markdown使用指南",
             "date_published": "2020-12-24T04:10:45.000Z",
             "content_html": "<h2 id=\"test\"><a class=\"anchor\" href=\"#test\">#</a> test</h2>\n",
