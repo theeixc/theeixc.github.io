@@ -2,7 +2,7 @@
 <rss version="2.0">
     <channel>
         <title>津渡烛影深</title>
-        <subtitle>有夢書架</subtitle>
+        <subtitle>无远弗届, 穷山举海</subtitle>
         <icon>https://github.com/theeixc/theeixc.github.io.git/images/favicon.ico</icon>
         <link>https://github.com/theeixc/theeixc.github.io.git</link>
         <author>
@@ -10,14 +10,103 @@
         </author>
         <description>欢迎来到MrQusal的小站</description>
         <language>zh-CN</language>
-        <pubDate>Fri, 22 Jul 2022 20:42:45 +0800</pubDate>
-        <lastBuildDate>Fri, 22 Jul 2022 20:42:45 +0800</lastBuildDate>
+        <pubDate>Fri, 29 Jul 2022 20:42:45 +0800</pubDate>
+        <lastBuildDate>Fri, 29 Jul 2022 20:42:45 +0800</lastBuildDate>
         <category term="前端" />
         <category term="web" />
+        <category term="hexo" />
+        <category term="博客" />
         <item>
-            <guid isPermalink="true">https://github.com/theeixc/theeixc.github.io.git/2022/07/22/hexo/basicConfig/</guid>
-            <title>hexo 基本配置</title>
-            <link>https://github.com/theeixc/theeixc.github.io.git/2022/07/22/hexo/basicConfig/</link>
+            <guid isPermalink="true">https://github.com/theeixc/theeixc.github.io.git/hexo/display/</guid>
+            <title>界面显示</title>
+            <link>https://github.com/theeixc/theeixc.github.io.git/hexo/display/</link>
+            <category term="Hexo搭建个人博客" scheme="https://github.com/theeixc/theeixc.github.io.git/categories/hexo/" />
+            <category term="hexo" scheme="https://github.com/theeixc/theeixc.github.io.git/tags/hexo/" />
+            <category term="教程" scheme="https://github.com/theeixc/theeixc.github.io.git/tags/%E6%95%99%E7%A8%8B/" />
+            <pubDate>Fri, 29 Jul 2022 20:42:45 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;首页置顶文章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#首页置顶文章&#34;&gt;#&lt;/a&gt; 首页置顶文章&lt;/h1&gt;
+&lt;p&gt;在文章的  &lt;code&gt;Front Matter&lt;/code&gt;  设置  &lt;code&gt;sticky: true&lt;/code&gt;  ，则该文章将显示在首页最上方的  &lt;code&gt;置顶文章&lt;/code&gt;  列。&lt;br /&gt;
+多篇文章置顶，按发布顺序排列，不分页。&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token front-matter-block&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;---&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token front-matter yaml language-yaml&#34;&gt;&lt;span class=&#34;token key atrule&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 置顶文章&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;sticky&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean important&#34;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;首页精选分类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#首页精选分类&#34;&gt;#&lt;/a&gt; 首页精选分类&lt;/h1&gt;
+&lt;p&gt;设置后，首页显示分类，且卡片具有反转效果&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先，修改站点配置，在 &lt;code&gt;&amp;lt;root&amp;gt;/_config.yml&lt;/code&gt;  找到 &lt;code&gt;category_map&lt;/code&gt; , 配置每个分类对应的英文映射，比如：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;category_map&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token comment&#34;&gt;# edit for Theme.shoka&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;前端&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; fornt&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;end&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;Hexo搭建个人博客&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; hexo&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token key atrule&#34;&gt;shoka主题&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; shoka&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;tag_map&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;在 &lt;code&gt;&amp;lt;root&amp;gt;/source/_post&lt;/code&gt;  文件夹对应的目录中，存在对应的封面图，命名为 &lt;code&gt;cover,jpg&lt;/code&gt; ，并且处于该分类下的文章，书写时需要在 &lt;code&gt;Front Matter&lt;/code&gt;  设置：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token front-matter-block&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;---&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token front-matter yaml language-yaml&#34;&gt;&lt;span class=&#34;token key atrule&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 基本配置&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 2022/07/29 20&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;token datetime number&#34;&gt;42:45&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;categories&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;hexo&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt; shoka&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;为了方便文章管理，文类下的所有 md 文件放入一个目录下，比如： &lt;code&gt;&amp;lt;root&amp;gt;/source/_post/hexo/shoka&lt;/code&gt;  目录下，且在站点配置文件中，设置永久链接&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;permalink&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;title/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;code&gt;hexo g&lt;/code&gt;  后，文章的  &lt;code&gt;html&lt;/code&gt;  文件将全部生成到  &lt;code&gt;&amp;lt;root&amp;gt;/public/hexo/shoka&lt;/code&gt;  目录中&lt;/p&gt;
+&lt;h1 id=&#34;文章的封面图&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文章的封面图&#34;&gt;#&lt;/a&gt; 文章的封面图&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;如果在文章的  &lt;code&gt;Front Matter&lt;/code&gt;  设置了  &lt;code&gt;cover: image path&lt;/code&gt; ，则封装会显示这张图片。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-ymal&#34;&gt;title: Images
+cover: assets/wallpaper-2572384.jpg
+# 或者写成
+cover: http://placehold.it/350x150.jpg
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里  &lt;code&gt;cover&lt;/code&gt;  的值可以是位于  &lt;code&gt;source&lt;/code&gt;  目录里的图片文件，此处是  &lt;code&gt;&amp;lt;root&amp;gt;/source/assets/wallpaper-2572384.jpg&lt;/code&gt;  文件，也可以是一个某网址。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果文章是一个  &lt;code&gt;gallery post&lt;/code&gt;  ，即  &lt;code&gt;Front Matter&lt;/code&gt;  设置了  &lt;code&gt;photos&lt;/code&gt;  ，则会封面会显示设置的第一张图片。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Gallery Post&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;photos&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; assets/wallpaper&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;2572384.jpg&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; assets/wallpaper&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;2311325.jpg&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; assets/wallpaper&lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt;878514.jpg&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; http&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;//placehold.it/350x150.jpg&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;---&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;此时默认会显示第一个图片，即位于  &lt;code&gt;&amp;lt;root&amp;gt;/source/assets/&lt;/code&gt;  目录里的  &lt;code&gt;wallpaper-2572384.jpg&lt;/code&gt;  。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果以上设置均不存在，将显示一张随机图片&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;图片展示&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#图片展示&#34;&gt;#&lt;/a&gt; 图片展示&lt;/h1&gt;
+&lt;p&gt;在文章的  &lt;code&gt;Front Matter&lt;/code&gt;  设置  &lt;code&gt;fancybox: false&lt;/code&gt;  ，可以关闭文章页的图片展示功能。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;图片下方显示  &lt;code&gt;title&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token url&#34;&gt;&lt;span class=&#34;token operator&#34;&gt;!&lt;/span&gt;[&lt;span class=&#34;token content&#34;&gt;这里是 alt&lt;/span&gt;](&lt;span class=&#34;token url&#34;&gt;https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;这里是 title&#34;&lt;/span&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;设置图片的大小&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;![](https://tva3.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg &#34;定义图片大小 - 固定宽度和高度&#34;)&amp;#123;height=&#34;100px&#34; width=&#34;400px&#34;&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;自定义页面配色&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自定义页面配色&#34;&gt;#&lt;/a&gt; 自定义页面配色&lt;/h1&gt;
+&lt;p&gt;主题配色全部在  &lt;code&gt;&amp;lt;root&amp;gt;/themes/shoka/source/css/_colors.styl&lt;/code&gt;  文件中，可以自行查看。&lt;/p&gt;
+&lt;p&gt;在  &lt;code&gt;&amp;lt;root&amp;gt;/source/_data/&lt;/code&gt;  目录新建文件  &lt;code&gt;colors.styl&lt;/code&gt;  ，在此文件中添改样式。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;自定义  &lt;code&gt;colors.styl&lt;/code&gt;  文件将覆盖主题默认样式，为了避免出错，请保证原有样式名均存在，在原有样式基础上进行增删改。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;主题支持在  &lt;code&gt;&amp;lt;root&amp;gt;/source/_data/&lt;/code&gt;  目录建立三个自定义  &lt;code&gt;styl&lt;/code&gt;  文件：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;自定义文件名&lt;/th&gt;
+&lt;th&gt;对应的默认演示&lt;/th&gt;
+&lt;th&gt;样式功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;colors.styl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;_colors.styl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;页面配色&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;iconfont.styl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt; _iconfont.styl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;图标样式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;custom.styl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;任意自定义样式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;自定义主题图片&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自定义主题图片&#34;&gt;#&lt;/a&gt; 自定义主题图片&lt;/h1&gt;
+&lt;p&gt;如果想要修改主题的  &lt;code&gt;&amp;lt;root&amp;gt;/themes/shoka/source/images/&lt;/code&gt;  目录内的某张图片，请在  &lt;code&gt;&amp;lt;root&amp;gt;/source/_data/&lt;/code&gt;  目录新建目录  &lt;code&gt;images&lt;/code&gt;  ，并在这个文件夹中添加同名文件，部署时将自动覆盖主题内的默认图片。&lt;/p&gt;
+&lt;p&gt;可以用此方法自定义头像、打赏二维码等图片，并且避免覆盖更新主题时遗失自定义文件。&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://github.com/theeixc/theeixc.github.io.git/hexo/basicConfig/</guid>
+            <title>基本配置</title>
+            <link>https://github.com/theeixc/theeixc.github.io.git/hexo/basicConfig/</link>
             <category term="Hexo搭建个人博客" scheme="https://github.com/theeixc/theeixc.github.io.git/categories/hexo/" />
             <category term="hexo" scheme="https://github.com/theeixc/theeixc.github.io.git/tags/hexo/" />
             <category term="教程" scheme="https://github.com/theeixc/theeixc.github.io.git/tags/%E6%95%99%E7%A8%8B/" />
@@ -92,9 +181,9 @@
 &lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;image_server&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;https://acg.xydwz.cn/api/api.php&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/theeixc/theeixc.github.io.git/2022/07/21/hexo/quickStart/</guid>
-            <title>hexo 快速开始</title>
-            <link>https://github.com/theeixc/theeixc.github.io.git/2022/07/21/hexo/quickStart/</link>
+            <guid isPermalink="true">https://github.com/theeixc/theeixc.github.io.git/hexo/quickStart/</guid>
+            <title>快速开始</title>
+            <link>https://github.com/theeixc/theeixc.github.io.git/hexo/quickStart/</link>
             <category term="Hexo搭建个人博客" scheme="https://github.com/theeixc/theeixc.github.io.git/categories/hexo/" />
             <category term="hexo" scheme="https://github.com/theeixc/theeixc.github.io.git/tags/hexo/" />
             <category term="教程" scheme="https://github.com/theeixc/theeixc.github.io.git/tags/%E6%95%99%E7%A8%8B/" />
@@ -175,25 +264,13 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">https://github.com/theeixc/theeixc.github.io.git/2020/12/24/hexo/hexo%E8%B8%A9%E5%9D%91/</guid>
-            <title>hexo 配置指南</title>
-            <link>https://github.com/theeixc/theeixc.github.io.git/2020/12/24/hexo/hexo%E8%B8%A9%E5%9D%91/</link>
-            <category term="Hexo搭建个人博客" scheme="https://github.com/theeixc/theeixc.github.io.git/categories/hexo/" />
-            <pubDate>Thu, 24 Dec 2020 13:10:45 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;test&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#test&#34;&gt;#&lt;/a&gt; test&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;ins&gt;下划线&lt;/ins&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;figcaption data-lang=&#34;javascript&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;console&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;123&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://github.com/theeixc/theeixc.github.io.git/2020/12/24/fornt-end/javascript/1/</guid>
+            <guid isPermalink="true">https://github.com/theeixc/theeixc.github.io.git/fornt-end/javascript/1/</guid>
             <title>Markdown使用指南</title>
-            <link>https://github.com/theeixc/theeixc.github.io.git/2020/12/24/fornt-end/javascript/1/</link>
+            <link>https://github.com/theeixc/theeixc.github.io.git/fornt-end/javascript/1/</link>
             <category term="前端" scheme="https://github.com/theeixc/theeixc.github.io.git/categories/fornt-end/" />
-            <category term="JavaScript" scheme="https://github.com/theeixc/theeixc.github.io.git/categories/fornt-end/JavaScript/" />
+            <category term="js" scheme="https://github.com/theeixc/theeixc.github.io.git/categories/fornt-end/js/" />
             <pubDate>Thu, 24 Dec 2020 12:10:45 +0800</pubDate>
-            <description><![CDATA[ &lt;h2 id=&#34;test&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#test&#34;&gt;#&lt;/a&gt; test&lt;/h2&gt;
+            <description><![CDATA[ &lt;h2 id=&#34;测试多级分类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#测试多级分类&#34;&gt;#&lt;/a&gt; 测试多级分类&lt;/h2&gt;
  ]]></description>
         </item>
     </channel>
