@@ -8,16 +8,354 @@
     <author>
       <name>津渡烛影深</name>
     </author>
-    <updated>2022-07-29T12:42:45.000Z</updated>
+    <updated>2022-08-21T05:10:45.000Z</updated>
     <category term="前端" />
     <category term="web" />
     <category term="hexo" />
     <category term="博客" />
     <entry>
+        <id>https://github.com/theeixc/theeixc.github.io.git/hexo/special/</id>
+        <title>特殊功能</title>
+        <link rel="alternate" href="https://github.com/theeixc/theeixc.github.io.git/hexo/special/"/>
+        <content type="html">&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL3F1aWNrU3RhcnQ=&#34;&gt;🚀快速开始&lt;/span&gt; --&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL2Jhc2ljQ29uZmln&#34;&gt;🌈基本配置&lt;/span&gt; --&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL2Rpc3BsYXk=&#34;&gt;🏆界面显示&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;links-链接块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#links-链接块&#34;&gt;#&lt;/a&gt;  &lt;code&gt;links&lt;/code&gt;  链接块&lt;/h1&gt;
+&lt;p&gt;本功能参考 NexT，基于 Hexo Tag 功能，用来建立友链或其他网址链接功能。&lt;/p&gt;
+&lt;p&gt;文章中的使用格式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 links 标签块，包围 yml 语法书写的内容，字段包括
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;site&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;站点名称&lt;/td&gt;
+&lt;td&gt;必填&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;owner&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;管理员名称&lt;/td&gt;
+&lt;td&gt;可选，默认为 &lt;code&gt;site&lt;/code&gt;  的值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;url&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;站点链接&lt;/td&gt;
+&lt;td&gt;必填&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;dec&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;站点描述&lt;/td&gt;
+&lt;td&gt;可选，默认为 &lt;code&gt;url&lt;/code&gt;  的值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;imgae&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;站点图片&lt;/td&gt;
+&lt;td&gt;可选，默认为 &lt;code&gt;images/404.png&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;color&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;方块颜色&lt;/td&gt;
+&lt;td&gt;可选，默认为 &lt;code&gt;#666&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#123;% links %&amp;#125;
+- site: #站点名称
+  owner: #管理员名字
+  url: #站点网址
+  desc: #简短描述
+  image: #一张图片
+  color: #颜色代码
+&amp;#123;% endlinks %&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;以上标签块的内容，还可以保存在一个 &lt;code&gt;yml&lt;/code&gt;  文件中，然后使用 &lt;code&gt;linksfile&lt;/code&gt;  标签引入&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#123;% linksfile [path] %&amp;#125;
+&amp;#123;% linksfile friends/_data.yml %&amp;#125; // eg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;code-代码块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#code-代码块&#34;&gt;#&lt;/a&gt;  &lt;code&gt;code&lt;/code&gt;  代码块&lt;/h1&gt;
+&lt;p&gt;使用  &lt;code&gt;markdown-it-prism&lt;/code&gt;  进行代码高亮，支持显示行号、行高亮 &lt;code&gt;mark&lt;/code&gt; 、命令行提示符 &lt;code&gt;command&lt;/code&gt; 、代码块标题等&lt;br /&gt;
+基本格式：  &lt;code&gt;[language] [title] [url] [link text] [mark] [command]&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;选项&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;描述&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;默认值&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;language&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1. 支持的语言&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9wcmlzbWpzLmNvbS8jc3VwcG9ydGVkLWxhbmd1YWdlcw==&#34;&gt;戳此处&lt;/span&gt; 2. 如果不需要代码高亮，但希望显示代码块样式，设置为  &lt;code&gt;raw&lt;/code&gt;  3. 留空或设置为  &lt;code&gt;info&lt;/code&gt; ，将不显示代码高亮和代码块样式&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;null&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;title&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;代码块的标题文字&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;null&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;url&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;代码块标题右侧显示的链接&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;null&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;link text&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;上树链接显示的标题&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;link&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;mark&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1. 行高亮显示，格式为  &lt;code&gt;mark: 行号,开始行号-结束行号,其他行号&lt;/code&gt;  2. 例如  &lt;code&gt;mark:1,4-7,10&lt;/code&gt; ，将高亮显示第 1、4-7、10 行&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;null&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;command&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;命令行提示符，格式为  &lt;code&gt;command:(&amp;quot;提示内容&amp;quot;:行号,行号 或 &amp;quot;提示内容&amp;quot;:行号开始-行号结束)&lt;/code&gt;  例如  &lt;code&gt;command:(&amp;quot;[root@localhst] $&amp;quot;:1,9-10)&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;null&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;span&gt;行高亮&lt;/span&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=&#34;&gt;参考链接&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr class=&#34;marked&#34;&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;token import&#34;&gt;&lt;span class=&#34;token namespace&#34;&gt;java&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;util&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;Scanner&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;Scanner&lt;/span&gt; in &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;Scanner&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;in&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;// 输入 Scan 之后，按下键盘 Alt + “/” 键，Eclipse 下自动补全。&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&#34;marked&#34;&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;println &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;in&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;nextLine &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class=&#34;marked&#34;&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token class-name&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;out&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;println &lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;Hello&#34;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;world.&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;emoji-颜文字&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#emoji-颜文字&#34;&gt;#&lt;/a&gt;  &lt;code&gt;emoji&lt;/code&gt;  颜文字&lt;/h1&gt;
+&lt;p&gt;本功能基于  &lt;code&gt;markdown-it-emoji&lt;/code&gt; ，所有的&lt;a href=&#34;https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.json&#34;&gt;标签参考戳次&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight raw&#34;&gt;&lt;figcaption data-lang=&#34;&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:kissing_heart:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:ring:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:notes:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;😘💍🎶&lt;/p&gt;
+&lt;h1 id=&#34;effects-文字特效&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#effects-文字特效&#34;&gt;#&lt;/a&gt;  &lt;code&gt;effects&lt;/code&gt;  文字特效&lt;/h1&gt;
+&lt;p&gt;本功能基于  &lt;code&gt;markdown-it-ins&lt;/code&gt; 、 &lt;code&gt;markdown-it-bracketed-spans&lt;/code&gt;  和  &lt;code&gt;markdown-it-attrs&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本主题的风格颜色通用样式：default、primary、success、info、warning、danger&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight raw&#34;&gt;&lt;figcaption data-lang=&#34;&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;++ 下划线 ++&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;++ 波浪线 ++&amp;#123;.wavy&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;++ 紫色下划线 ++&amp;#123;.primary&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;++ 绿色波浪线 ++&amp;#123;.wavy .success&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;~~ 删除线～～&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;~~ 红色删除线～～&amp;#123;.danger&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#x3D;&amp;#x3D; 荧光高亮 &amp;#x3D;&amp;#x3D;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[赤橙黄绿青蓝紫]&amp;#123;.rainbow&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[红色]&amp;#123;.red&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[粉色]&amp;#123;.pink&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[橙色]&amp;#123;.orange&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[黄色]&amp;#123;.yellow&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[绿色]&amp;#123;.green&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[靛青]&amp;#123;.aqua&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[蓝色]&amp;#123;.blue&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[紫色]&amp;#123;.purple&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[灰色]&amp;#123;.grey&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;快捷键 [Ctrl]&amp;#123;.kbd&amp;#125; + [C]&amp;#123;.kbd .red&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;H~2~0&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;29^th^&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;ins&gt;下划线&lt;/ins&gt;&lt;br /&gt;
+&lt;ins class=&#34;wavy&#34;&gt;波浪线&lt;/ins&gt;&lt;br /&gt;
+&lt;ins class=&#34;primary&#34;&gt;紫色下划线&lt;/ins&gt;&lt;br /&gt;
+&lt;ins class=&#34;wavy success&#34;&gt;绿色波浪线&lt;/ins&gt;&lt;br /&gt;
+&lt;s&gt;删除线&lt;/s&gt;&lt;br /&gt;
+&lt;s class=&#34;danger&#34;&gt;红色删除线&lt;/s&gt;&lt;br /&gt;
+&lt;mark&gt;荧光高亮&lt;/mark&gt;&lt;br /&gt;
+&lt;span class=&#34;rainbow&#34;&gt;赤橙黄绿青蓝紫&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;red&#34;&gt;红色&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;pink&#34;&gt;粉色&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;orange&#34;&gt;橙色&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;yellow&#34;&gt;黄色&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;green&#34;&gt;绿色&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;aqua&#34;&gt;靛青&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;blue&#34;&gt;蓝色&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;purple&#34;&gt;紫色&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;grey&#34;&gt;灰色&lt;/span&gt;&lt;br /&gt;
+快捷键 &lt;span class=&#34;kbd&#34;&gt;Ctrl&lt;/span&gt; + &lt;span class=&#34;kbd red&#34;&gt;C&lt;/span&gt;&lt;br /&gt;
+H&lt;sub&gt;2&lt;/sub&gt;0&lt;br /&gt;
+29&lt;sup&gt;th&lt;/sup&gt;&lt;/p&gt;
+&lt;h1 id=&#34;spoiler-隐藏文字&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#spoiler-隐藏文字&#34;&gt;#&lt;/a&gt;  &lt;code&gt;spoiler&lt;/code&gt;  隐藏文字&lt;/h1&gt;
+&lt;p&gt;本功能基于  &lt;code&gt;markdown-it-spoiler&lt;/code&gt;  和  &lt;code&gt;markdown-it-attrs&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight raw&#34;&gt;&lt;figcaption data-lang=&#34;&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;!! 黑幕黑幕黑幕黑幕黑幕黑幕！！： 鼠标滑过显示内容&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;!! 模糊模糊模糊模糊模糊模糊！！&amp;#123;.bulr&amp;#125; ： 选中文字显示内容&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;span class=&#34;spoiler&#34; title=&#34;你知道得太多了&#34;&gt;黑幕黑幕黑幕黑幕黑幕黑幕&lt;/span&gt;： 鼠标滑过显示内容&lt;br /&gt;
+&lt;span class=&#34;spoiler bulr&#34; title=&#34;你知道得太多了&#34;&gt;模糊模糊模糊模糊模糊模糊&lt;/span&gt; ： 选中文字显示内容&lt;/p&gt;
+&lt;h1 id=&#34;label-标签块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#label-标签块&#34;&gt;#&lt;/a&gt;  &lt;code&gt;label&lt;/code&gt;  标签块&lt;/h1&gt;
+&lt;p&gt;本功能基于  &lt;code&gt;markdown-it-bracketed-spans&lt;/code&gt;  和  &lt;code&gt;markdown-it-attrs&lt;/code&gt; &lt;br /&gt;
+ 有以下颜色可选&lt;/p&gt;
+&lt;figure class=&#34;highlight raw&#34;&gt;&lt;figcaption data-lang=&#34;&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[default]&amp;#123;.label&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[primary]&amp;#123;.label .primary&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[info]&amp;#123;.label .info&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[:heavy_check_mark:success]&amp;#123;.label .success&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[warning]&amp;#123;.label .warning&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[:broken_heart:danger]&amp;#123;.label .danger&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;&lt;span class=&#34;label&#34;&gt;default&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;label primary&#34;&gt;primary&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;label info&#34;&gt;info&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;label success&#34;&gt;✔️success&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;label warning&#34;&gt;warning&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;label danger&#34;&gt;💔danger&lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&#34;note-提醒块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#note-提醒块&#34;&gt;#&lt;/a&gt;  &lt;code&gt;note&lt;/code&gt;  提醒块&lt;/h1&gt;
+&lt;p&gt;本功能基于  &lt;code&gt;markdown-it-container&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;开始行&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;:::[风格颜色]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;结束行&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;:::&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;figure class=&#34;highlight raw&#34;&gt;&lt;figcaption data-lang=&#34;&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::default&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;默认默认&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::primary&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;基本基本&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::info&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;提示提示&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::success&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;成功成功&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::warning&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;警告警告&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::danger&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;危险危险&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::danger no-icon&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;危险危险&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;div class=&#34;note default&#34;&gt;
+&lt;p&gt;默认默认&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;基本基本&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;提示提示&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note success&#34;&gt;
+&lt;p&gt;成功成功&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note warning&#34;&gt;
+&lt;p&gt;警告警告&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note danger&#34;&gt;
+&lt;p&gt;危险危险&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;note danger no-icon&#34;&gt;
+&lt;p&gt;危险危险&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;tab-标签卡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tab-标签卡&#34;&gt;#&lt;/a&gt;  &lt;code&gt;tab&lt;/code&gt;  标签卡&lt;/h1&gt;
+&lt;p&gt;本功能基于  &lt;code&gt;markdown-it-container&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;开始行&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;;;;[同一ID] [标签名称]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;结束行&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;;;;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code&gt;;;;id1 卡片 1
+这里是卡片 1 的内容
+** 加粗 **
+[success]&amp;#123;.label .success&amp;#125;
+;;;
+
+;;;id1 卡片 2
+这里是卡片 2 的内容
+:::danger
+危险危险
+:::
+
+- 第一行
+- 第二行
+  ;;;
+
+;;;id2 ② 号标签卡片 1
+这里是卡片 1 的内容
+;;;
+
+;;;id2 ② 号标签卡片 2
+这里是卡片 2 的内容
+;;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;卡片 1&#34;&gt;
+&lt;p&gt;这里是卡片 1 的内容&lt;br /&gt;
+&lt;strong&gt;加粗&lt;/strong&gt;&lt;br /&gt;
+&lt;span class=&#34;label success&#34;&gt; success&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;霜月琉璃&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=&#34; data-background-image=&#34;https://cdn.jsdelivr.net/gh/amehime/shoka@latest/images/avatar.jpg&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=&#34;&gt;優萌初華&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;琉璃的医学 &amp; 编程笔记&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id1&#34; data-title=&#34;卡片 2&#34;&gt;
+&lt;p&gt;这里是卡片 2 的内容&lt;/p&gt;
+&lt;div class=&#34;note danger&#34;&gt;
+&lt;p&gt;危险危险&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;第一行&lt;/li&gt;
+&lt;li&gt;第二行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id2&#34; data-title=&#34;② 号标签卡片 1&#34;&gt;
+&lt;p&gt;这里是卡片 1 的内容&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id2&#34; data-title=&#34;② 号标签卡片 2&#34;&gt;
+&lt;p&gt;这里是卡片 2 的内容&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;collapse-折叠块&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#collapse-折叠块&#34;&gt;#&lt;/a&gt;  &lt;code&gt;collapse&lt;/code&gt;  折叠块&lt;/h1&gt;
+&lt;p&gt;本功能基于  &lt;code&gt;markdown-it-container&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;开始行&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;+++[风格颜色] [标题文字]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;结束行&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;code&gt;+++&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;figure class=&#34;highlight raw&#34;&gt;&lt;figcaption data-lang=&#34;&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++ 默认默认 这里是一段文字&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;++ 下划线 ++&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++primary 紫色&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::info&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;参考信息&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;:::&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;- 第一行&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;- 第二行&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++info  蓝色&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;;;;id3 卡片 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;这里是卡片 1 的内容&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;;;;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;;;;id3 卡片 2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;这里是卡片 2 的内容&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;;;;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++success 绿色&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;優萌初華&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=&#34; data-background-image=&#34;/images/404.png&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=&#34;&gt;優萌初華&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;https://shoka.lostyu.me&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++warning 黄色&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;!! 警告警告警告警告警告！！&amp;#123;.bulr&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[label]&amp;#123;.label .success&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++danger 红色&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;[danger]&amp;#123;.label .danger&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;+++&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;details&gt;&lt;summary&gt;默认默认 这里是一段文字&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;ins&gt;下划线&lt;/ins&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;紫色&lt;/summary&gt;&lt;div&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;参考信息&lt;/p&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;第一行&lt;/li&gt;
+&lt;li&gt;第二行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;蓝色&lt;/summary&gt;&lt;div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;卡片 1&#34;&gt;
+&lt;p&gt;这里是卡片 1 的内容&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;卡片 2&#34;&gt;
+&lt;p&gt;这里是卡片 2 的内容&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;success&#34;&gt;&lt;summary&gt;绿色&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;優萌初華&#34; style=&#34;--block-color:#e9546b;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=&#34; data-background-image=&#34;/images/404.png&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly9zaG9rYS5sb3N0eXUubWU=&#34;&gt;優萌初華&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;https://shoka.lostyu.me&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;warning&#34;&gt;&lt;summary&gt;黄色&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;span class=&#34;spoiler bulr&#34; title=&#34;你知道得太多了&#34;&gt;警告警告警告警告警告&lt;/span&gt;&lt;br /&gt;
+&lt;span class=&#34;label success&#34;&gt; label&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details class=&#34;danger&#34;&gt;&lt;summary&gt;红色&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;span class=&#34;label danger&#34;&gt;danger&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h1 id=&#34;待办事项&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#待办事项&#34;&gt;#&lt;/a&gt; 待办事项&lt;/h1&gt;
+&lt;p&gt;本功能基于  &lt;code&gt;markdown-it-task-checkbox&lt;/code&gt;  。&lt;br /&gt;
+可以利用  &lt;code&gt;markdown-it-attrs&lt;/code&gt;  添加风格颜色，只可以给  &lt;code&gt;ul&lt;/code&gt;  标签添加，需要新建两行。&lt;/p&gt;
+&lt;figure class=&#34;highlight raw&#34;&gt;&lt;figcaption data-lang=&#34;&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;- [ ] 这是一个小叉叉&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;- [x] 这是一个红色勾勾&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123;.danger&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;- [ ] 未完成&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;- [x] 完成&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#123;.primary&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;- [ ] 未完成&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;- [x] 默认颜色&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;ul class=&#34;task-list danger&#34;&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_0&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_0&#34;&gt; 这是一个小叉叉&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_1&#34; checked=&#34;true&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_1&#34;&gt; 这是一个红色勾勾&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class=&#34;task-list primary&#34;&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_2&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_2&#34;&gt; 未完成&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_3&#34; checked=&#34;true&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_3&#34;&gt; 完成&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_4&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_4&#34;&gt; 未完成&lt;/label&gt;&lt;/li&gt;
+&lt;li class=&#34;task-list-item&#34;&gt;&lt;input type=&#34;checkbox&#34; id=&#34;cbx_5&#34; checked=&#34;true&#34; disabled=&#34;true&#34; /&gt;&lt;label for=&#34;cbx_5&#34;&gt; 默认颜色&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;media-多媒体&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#media-多媒体&#34;&gt;#&lt;/a&gt;  &lt;code&gt;media&lt;/code&gt;  多媒体&lt;/h1&gt;
+&lt;p&gt;本功能基于  &lt;code&gt;Hexo Tag&lt;/code&gt;  功能，使用  &lt;code&gt;media&lt;/code&gt;  标签，目前可选择两种类型，即  &lt;code&gt;audio&lt;/code&gt;  和  &lt;code&gt;video&lt;/code&gt;  。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;#123;% media audio %&amp;#125;
+... 音频列表
+&amp;#123;% endmedia %&amp;#125;
+
+&amp;#123;% media video %&amp;#125;
+... 视频列表
+&amp;#123;% endmedia %&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;标签包绕一段  &lt;code&gt;yml&lt;/code&gt;  格式的内容，格式与背景音乐的配置类似。&lt;/p&gt;
+&lt;p&gt;亦可以直接使用网易云、虾米、QQ 音乐的播放列表、单曲。&lt;/p&gt;
+&lt;figure class=&#34;highlight raw&#34;&gt;&lt;figcaption data-lang=&#34;&#34;&gt;&lt;span&gt;举个栗子&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;div class=&#34;media-container&#34;&gt;&lt;div class=&#34;player&#34; data-type=&#34;audio&#34; data-src=&#39;[{&#34;title&#34;:&#34;列表 1&#34;,&#34;list&#34;:[&#34;https://music.163.com/#/playlist?id=2943811283&#34;,&#34;https://music.163.com/#/playlist?id=2297706586&#34;]},{&#34;title&#34;:&#34;列表 2&#34;,&#34;list&#34;:[&#34;https://music.163.com/#/playlist?id=2031842656&#34;]}]&#39;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;div class=&#34;media-container&#34;&gt;&lt;div class=&#34;player&#34; data-type=&#34;video&#34; data-src=&#39;[{&#34;name&#34;:&#34;测试 1&#34;,&#34;url&#34;:&#34;https://cdn.kastatic.org/ka-youtube-converted/O_nY1TM2RZM.mp4/O_nY1TM2RZM.mp4#t=0&#34;},{&#34;name&#34;:&#34;测试 2&#34;,&#34;url&#34;:&#34;https://cdn.kastatic.org/ka-youtube-converted/O_nY1TM2RZM.mp4/O_nY1TM2RZM.mp4#t=0&#34;}]&#39;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;math-数学公式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#math-数学公式&#34;&gt;#&lt;/a&gt;  &lt;code&gt;Math&lt;/code&gt;  数学公式&lt;/h1&gt;
+&lt;p&gt;本功能基于  &lt;code&gt;markdown-it-katex&lt;/code&gt; &lt;br /&gt;
+ 在  &lt;code&gt;Front Matter&lt;/code&gt;  中添加  &lt;code&gt;math: true&lt;/code&gt;  以支持  &lt;code&gt;KaTex&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight raw&#34;&gt;&lt;figcaption data-lang=&#34;&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;---&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;title: 数学公式显示&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;math: true&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;---&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;行内公式：$\sqrt &amp;#123;3x-1&amp;#125;+(1+x)^2$&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;独立块显示：&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$$\begin &amp;#123;array&amp;#125;&amp;#123;c&amp;#125;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;\nabla \times \vec &amp;#123;\mathbf &amp;#123;B&amp;#125;&amp;#125; -\, \frac1c\, \frac &amp;#123;\partial\vec &amp;#123;\mathbf &amp;#123;E&amp;#125;&amp;#125;&amp;#125;&amp;#123;\partial t&amp;#125; &amp;amp;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&amp;#x3D; \frac &amp;#123;4\pi&amp;#125;&amp;#123;c&amp;#125;\vec &amp;#123;\mathbf &amp;#123;j&amp;#125;&amp;#125;    \nabla \cdot \vec &amp;#123;\mathbf &amp;#123;E&amp;#125;&amp;#125; &amp;amp; &amp;#x3D; 4 \pi \rho \\&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;\nabla \times \vec &amp;#123;\mathbf &amp;#123;E&amp;#125;&amp;#125;\, +\, \frac1c\, \frac &amp;#123;\partial\vec &amp;#123;\mathbf &amp;#123;B&amp;#125;&amp;#125;&amp;#125;&amp;#123;\partial t&amp;#125; &amp;amp; &amp;#x3D; \vec &amp;#123;\mathbf &amp;#123;0&amp;#125;&amp;#125; \\&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;\nabla \cdot \vec &amp;#123;\mathbf &amp;#123;B&amp;#125;&amp;#125; &amp;amp; &amp;#x3D; 0&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;\end &amp;#123;array&amp;#125;$$&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="Hexo搭建个人博客" scheme="https://github.com/theeixc/theeixc.github.io.git/categories/hexo/" />
+        <category term="hexo" scheme="https://github.com/theeixc/theeixc.github.io.git/tags/hexo/" />
+        <category term="教程" scheme="https://github.com/theeixc/theeixc.github.io.git/tags/%E6%95%99%E7%A8%8B/" />
+        <updated>2022-08-21T05:10:45.000Z</updated>
+    </entry>
+    <entry>
         <id>https://github.com/theeixc/theeixc.github.io.git/hexo/display/</id>
         <title>界面显示</title>
         <link rel="alternate" href="https://github.com/theeixc/theeixc.github.io.git/hexo/display/"/>
-        <content type="html">&lt;h1 id=&#34;首页置顶文章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#首页置顶文章&#34;&gt;#&lt;/a&gt; 首页置顶文章&lt;/h1&gt;
+        <content type="html">&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL3F1aWNrU3RhcnQ=&#34;&gt;🚀快速开始&lt;/span&gt; -&amp;gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL2Jhc2ljQ29uZmln&#34;&gt;🌈基本配置&lt;/span&gt; -&amp;gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL2Rpc3BsYXk=&#34;&gt;🏆界面显示&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;首页置顶文章&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#首页置顶文章&#34;&gt;#&lt;/a&gt; 首页置顶文章&lt;/h1&gt;
 &lt;p&gt;在文章的  &lt;code&gt;Front Matter&lt;/code&gt;  设置  &lt;code&gt;sticky: true&lt;/code&gt;  ，则该文章将显示在首页最上方的  &lt;code&gt;置顶文章&lt;/code&gt;  列。&lt;br /&gt;
 多篇文章置顶，按发布顺序排列，不分页。&lt;/p&gt;
 &lt;figure class=&#34;highlight markdown&#34;&gt;&lt;figcaption data-lang=&#34;markdown&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token front-matter-block&#34;&gt;&lt;span class=&#34;token punctuation&#34;&gt;---&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token front-matter yaml language-yaml&#34;&gt;&lt;span class=&#34;token key atrule&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; 置顶文章&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;sticky&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;token boolean important&#34;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;---&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;首页精选分类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#首页精选分类&#34;&gt;#&lt;/a&gt; 首页精选分类&lt;/h1&gt;
@@ -104,7 +442,10 @@ cover: http://placehold.it/350x150.jpg
         <id>https://github.com/theeixc/theeixc.github.io.git/hexo/basicConfig/</id>
         <title>基本配置</title>
         <link rel="alternate" href="https://github.com/theeixc/theeixc.github.io.git/hexo/basicConfig/"/>
-        <content type="html">&lt;p&gt;👉👉 &lt;strong&gt;注意：以下配置均在根目录新建的  &lt;code&gt;&amp;lt;root&amp;gt;/_config.shoka.yml&lt;/code&gt; &lt;/strong&gt;&lt;/p&gt;
+        <content type="html">&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL3F1aWNrU3RhcnQ=&#34;&gt;🚀快速开始&lt;/span&gt; -&amp;gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL2Jhc2ljQ29uZmln&#34;&gt;🌈基本配置&lt;/span&gt; -&amp;gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL2Rpc3BsYXk=&#34;&gt;🏆界面显示&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;👉👉 &lt;strong&gt;注意：以下配置均在根目录新建的  &lt;code&gt;&amp;lt;root&amp;gt;/_config.shoka.yml&lt;/code&gt; &lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&#34;站点别称&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#站点别称&#34;&gt;#&lt;/a&gt; 站点别称&lt;/h1&gt;
 &lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;alternate&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; Yume Shoka&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;这里设置的名称为网页居中的 LOGO，以及页尾的 ©️ 处&lt;/p&gt;
 &lt;h1 id=&#34;静态文件目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#静态文件目录&#34;&gt;#&lt;/a&gt; 静态文件目录&lt;/h1&gt;
@@ -181,7 +522,10 @@ cover: http://placehold.it/350x150.jpg
         <id>https://github.com/theeixc/theeixc.github.io.git/hexo/quickStart/</id>
         <title>快速开始</title>
         <link rel="alternate" href="https://github.com/theeixc/theeixc.github.io.git/hexo/quickStart/"/>
-        <content type="html">&lt;h1 id=&#34;快速安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#快速安装&#34;&gt;#&lt;/a&gt; 快速安装&lt;/h1&gt;
+        <content type="html">&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL3F1aWNrU3RhcnQ=&#34;&gt;🚀快速开始&lt;/span&gt; --&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL2Jhc2ljQ29uZmln&#34;&gt;🌈基本配置&lt;/span&gt; --&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly90aGVlaXhjLmdpdGh1Yi5pby9oZXhvL2Rpc3BsYXk=&#34;&gt;🏆界面显示&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;快速安装&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#快速安装&#34;&gt;#&lt;/a&gt; 快速安装&lt;/h1&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# cd 到你的博客根目录&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;git&lt;/span&gt; clone https://github.com/amehime/hexo-theme-shoka.git ./themes/shoka&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h1 id=&#34;安装依赖插件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装依赖插件&#34;&gt;#&lt;/a&gt; 安装依赖插件&lt;/h1&gt;
 &lt;p&gt;在使用主题前，需要安装以下插件&lt;/p&gt;
 &lt;table&gt;
